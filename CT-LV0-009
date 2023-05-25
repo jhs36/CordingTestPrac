@@ -1,0 +1,11 @@
+def solution(a, d, included):
+    answer = 0
+
+    include = []
+    for n1, n2 in enumerate(included):
+        if n2 == True:
+            include.append(a + d * n1)
+            
+    answer += sum(include)
+
+    return answer
