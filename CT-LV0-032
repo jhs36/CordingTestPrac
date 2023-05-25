@@ -1,0 +1,7 @@
+def solution(q, r, code):
+    answer = ''
+    
+    for n1, n2 in enumerate(code):
+        if n1 % q == r:
+            answer += n2
+    return answer
