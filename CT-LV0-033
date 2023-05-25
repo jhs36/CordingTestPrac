@@ -1,0 +1,11 @@
+import string
+
+def solution(my_string):
+    answer = []
+    
+    for n1 in string.ascii_uppercase:
+        answer.append(my_string.count(n1))
+        
+    for n2 in string.ascii_lowercase:
+        answer.append(my_string.count(n2))
+    return answer
