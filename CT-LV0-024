@@ -1,0 +1,7 @@
+def solution(my_strings, parts):
+    answer = ''
+    
+    for n1, n2 in enumerate(my_strings):
+        answer += n2[parts[n1][0]:parts[n1][1]+1]
+        
+    return answer
