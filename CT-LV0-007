@@ -1,0 +1,9 @@
+def solution(ineq, eq, n, m):
+    answer = 0
+    if eq == '=':
+        a = 'n' + ineq + eq + 'm'
+    else:
+        a = 'n' + ineq + 'm'
+    if eval(a) == True:
+        answer += 1
+    return answer
