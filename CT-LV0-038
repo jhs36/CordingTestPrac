@@ -1,0 +1,8 @@
+def solution(arr, intervals):
+    answer = []
+    
+    for n in intervals:
+        for x,y in enumerate(arr):
+            if x >= n[0] and x <= n[1]:
+                answer.append(y)
+    return answer
