@@ -1,0 +1,29 @@
+def solution(str1, str2):
+    answer = ''
+    a = len(str1)
+    b = len(str2)
+    count1 = 0
+    count2 = 0
+    count3 = 0
+
+    if a > b:
+        while count1 != b:
+            answer += str1[count1]
+            answer += str2[count1]
+            count1 += 1
+        answer += str1[b:]
+
+    elif a < b:
+        while count2 != a:
+            answer += str1[count2]
+            answer += str2[count2]
+            count2 += 1
+        answer += str2[a:]
+
+    else: # a = b
+        while count3 != a:
+            answer += str1[count3]
+            answer += str2[count3]
+            count3 += 1
+
+    return answer
