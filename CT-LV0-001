@@ -1,0 +1,11 @@
+str = input()
+result = ''
+
+for n in str:
+    
+    if n.isupper() == True:
+        result += n.lower()
+    else:
+        result += n.upper()
+
+print(result)
