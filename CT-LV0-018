@@ -1,0 +1,27 @@
+def solution(l, r):
+    answer = []
+    a = list(range(l,r+1))
+    b = []
+    c = []
+    d = []
+
+    for n1 in a:
+        for n2 in str(n1):
+            if n2 == '0':
+                b.append(n2)
+            elif n2 == '5':
+                c.append(n2)
+            else:
+                d.append(n2)
+        if len(d) == 0 and len(b) > 0:
+            answer.append(n1)
+        elif len(d) == 0 and len(c) > 0:
+            answer.append(n1)
+        b.clear()
+        c.clear()
+        d.clear()
+
+    if len(answer) == 0:
+        answer.append(-1)
+
+    return answer
