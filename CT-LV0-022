@@ -1,0 +1,13 @@
+def solution(my_string, queries):
+    str2 = my_string
+
+    for n in queries:
+        str1 = ''
+        for n1 in range(n[1], n[0]-1, -1):
+            str1 += str2[n1]
+        if n[0] == 0:
+            str2 = str1 + str2[n[1]+1:]
+        else:
+            str2 = str2[:n[0]] + str1 + str2[n[1]+1:]
+
+    return str2
