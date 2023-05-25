@@ -1,0 +1,17 @@
+def solution(arr, queries):
+
+    a = []
+    b = []
+
+    for n1 in queries:
+        for n2 in arr[n1[0]:n1[1]+1]:
+            if n2 > n1[2]:
+                b.append(n2)
+
+        if not b:
+            a.append(-1)
+        else:
+            a.append(min(b))
+        b.clear()
+
+    return a
