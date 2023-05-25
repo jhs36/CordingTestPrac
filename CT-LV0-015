@@ -1,0 +1,8 @@
+def solution(arr, queries):
+    for n in queries:
+        arr.insert(n[0], arr[n[1]])
+        arr.insert(n[1]+1, arr[n[0]+1])
+        arr.pop(n[0] + 1)
+        arr.pop(n[1] + 1)
+
+    return arr
