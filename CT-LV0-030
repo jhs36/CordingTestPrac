@@ -1,0 +1,13 @@
+def solution(my_string, s, e):
+    answer = ''
+
+    reverse = ''
+
+    for n in reversed(my_string[s:e+1]):
+        reverse += n
+
+    answer += my_string[:s]
+    answer += reverse
+    answer += my_string[e+1:]
+    
+    return answer
