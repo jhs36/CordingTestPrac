@@ -1,0 +1,14 @@
+def solution(arr, idx):
+    answer = 0
+    
+    for n1,n2 in enumerate(arr):
+            if n2 == 1 and n1 >= idx and answer == 0:
+                answer += n1
+                if n1 == 0:
+                    break
+    
+    if answer == 0 and idx != 0:
+        answer -= 1
+            
+                
+    return answer
