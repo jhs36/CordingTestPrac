@@ -1,0 +1,36 @@
+def solution(my_string, overwrite_string, s):
+    a = len(my_string)
+    b = len(overwrite_string)
+    result = ''
+
+    if a-s > b:
+        for n1,str1 in enumerate(my_string):
+            if n1 < s:
+                result += str1
+
+        for str2 in overwrite_string:
+            result += str2
+
+        for n3, str3 in enumerate(my_string):
+            if n3+1 > s+b:
+                result += str3
+
+    elif a-s < b:
+        for n4,str4 in enumerate(my_string):
+            if n4 < s:
+                result += str4
+
+        for n5,str5 in enumerate(overwrite_string):
+            if n5 < a-s:
+                result += str5
+
+    else: # a-s = b
+        for n6,str6 in enumerate(my_string):
+            if n6 < s:
+                result += str6
+
+        for str7 in overwrite_string:
+            result += str7
+
+    answer = result
+    return answer
