@@ -1,0 +1,41 @@
+def solution(a, b, c, d):
+    answer = 0
+
+    e = [a, b, c, d]
+    f = ''
+
+    if a == b and b == c and c == d:
+        answer += 1111 * a
+
+    elif a != b and b != c and c != d and a != c and b != d and a != d:
+        answer += min(a, b, c, d)
+
+    elif a == b and c == d and a != c:
+        answer += (a + c) * abs(a - c)
+    elif a == c and b == d and a != b:
+        answer += (a + b) * abs(a - b)
+    elif a == d and b == c and a != b:
+        answer += (a + c) * abs(a - c)
+
+    elif a == b and b == c and a != d:
+        answer += (10 * a + d) ** 2
+    elif a == b and b == d and a != c:
+        answer += (10 * a + c) ** 2
+    elif a == c and c == d and a != b:
+        answer += (10 * a + b) ** 2
+    elif b == c and c == d and a != b:
+        answer += (10 * b + a) ** 2
+
+    else:
+        for n1 in e:
+            f += str(n1)
+        for n2, n3 in enumerate(e):
+            if f.count(str(n3)) == 2:
+                g = f.find(str(n3), n2 + 1)
+                e.pop(n2)
+                e.pop(g - 1)
+
+        answer += e[0] * e[1]
+
+
+    return answer
