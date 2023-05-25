@@ -1,0 +1,16 @@
+def solution(a, b):
+    answer = 0
+    c = len(str(a))
+    d = len(str(b))
+    e = a*(10**d)
+    f = b*(10**c)
+    g = e + b
+    h = f + a
+    
+    if g > h:
+        answer += g
+    elif g < h:
+        answer += h
+    else:
+        answer += g
+    return answer
