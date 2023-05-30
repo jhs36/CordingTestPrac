@@ -1,0 +1,10 @@
+def solution(num_list, n):
+    answer = []
+    
+    for x,y in enumerate(num_list):
+        if x >= n:
+            answer.append(y)
+    for x,y in enumerate(num_list):
+        if x < n:
+            answer.append(y)
+    return answer
