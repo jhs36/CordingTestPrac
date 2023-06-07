@@ -1,0 +1,8 @@
+def solution(myString, pat):
+    answer = ''
+    a = myString.rfind(pat)
+    
+    for x,y in enumerate(myString):
+        if x <= a+(len(pat)-1):
+            answer += y
+    return answer
