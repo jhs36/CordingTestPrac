@@ -1,0 +1,22 @@
+def solution(arr):
+    count = 0
+    a = []
+
+    while True:
+        a += arr
+        for x, y in enumerate(arr):
+            if y >= 50 and y % 2 == 0:
+                arr[x] = arr[x] / 2
+            elif y < 50 and y % 2 != 0:
+                arr[x] = arr[x] * 2 + 1
+            else:
+                pass
+
+        count += 1
+
+        if a == arr:
+            break
+        else:
+            a.clear()
+            
+    return count - 1
