@@ -1,0 +1,13 @@
+def solution(myStr):
+    answer = []
+    a = myStr.replace('a',' ')
+    b = a.replace('b',' ')
+    c = b.replace('c',' ')
+    d = c.split()
+    
+    for x in d:
+        if x != '':
+            answer.append(x)
+    if not answer:
+        answer.append('EMPTY')
+    return answer
