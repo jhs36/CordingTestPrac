@@ -1,0 +1,17 @@
+def solution(myString, pat):
+    answer = 0
+    a = 0
+    while True:
+        b = myString.find(pat,a)
+        if b == -1:
+            break
+        else:
+            if a == 0:
+                a += b+1
+            else:
+                if len(pat) == 1:
+                    a += 1
+                else:
+                    a = b+1
+            answer += 1
+    return answer 
