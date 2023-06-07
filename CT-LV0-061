@@ -1,0 +1,11 @@
+def solution(num_list):
+    answer = []
+    
+    num_list.sort()
+    
+    for x in num_list:
+        if len(answer) < 5:
+            answer.append(x)
+        else:
+            break
+    return answer
