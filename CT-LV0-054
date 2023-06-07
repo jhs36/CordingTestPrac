@@ -1,0 +1,15 @@
+def solution(arr, flag):
+    answer = []
+    
+    for x,y in enumerate(flag):
+        if y == True:
+            count = 0
+            while count < arr[x]*2:
+                answer.append(arr[x])
+                count += 1
+        else:
+            count = 0
+            while count < arr[x]:
+                answer.pop()
+                count += 1
+    return answer
