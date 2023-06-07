@@ -1,0 +1,8 @@
+def solution(arr):
+    answer = []
+    for x in arr:
+        count = 0
+        while count < x:
+            answer.append(x)
+            count += 1
+    return answer
