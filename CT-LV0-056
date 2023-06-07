@@ -1,0 +1,16 @@
+def solution(arr, k):
+    answer = []
+    
+    for x in arr:
+        if x in answer:
+            pass
+        else:
+            answer.append(x)
+    
+    if len(answer) < k:
+        while len(answer) < k:
+            answer.append(-1)
+    elif len(answer) > k:
+        while len(answer) > k:
+            answer.pop()
+    return answer
