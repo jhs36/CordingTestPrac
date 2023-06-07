@@ -1,0 +1,16 @@
+def solution(strArr):
+    a = []
+    
+    for x in strArr:
+        a.append(len(x))
+    
+    b = 1
+    c = []
+    while True:
+        if a.count(b) != 0:
+            c.append(a.count(b))
+            b += 1
+        else:
+            break
+    
+    return max(c)
