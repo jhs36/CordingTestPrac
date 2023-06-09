@@ -1,0 +1,7 @@
+def solution(str_list, ex):
+    answer = ''
+    
+    for x in str_list:
+        if x.find(ex) == -1:
+            answer += x
+    return answer
