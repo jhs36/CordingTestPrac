@@ -1,0 +1,21 @@
+def solution(rank, attendance):
+    a = []
+    b = []
+    c = []
+
+    for x, y in enumerate(attendance):
+        if y == True:
+            a.append([x, rank[x]])
+            b.append(rank[x])
+    b.sort()
+
+    while len(c) < 3:
+        for z in a:
+            if len(b) == 0:
+                break
+            else:
+                if z[1] == b[0]:
+                    c.append(z[0])
+                    b.pop(0)
+
+    return 10000 * c[0] + 100 * c[1] + c[2]
