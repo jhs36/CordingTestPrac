@@ -1,0 +1,9 @@
+def solution(picture, k):
+    answer = []
+    for x in picture:
+        a = ''
+        for y in x:
+            a += y*k
+        for z in range(0,k):
+            answer.append(a)
+    return answer
