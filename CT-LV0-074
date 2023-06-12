@@ -1,0 +1,70 @@
+def solution(n):
+    answer = []
+    for x in range(n):
+        a = []
+        for x in range(n):
+            a.append(0)
+        answer.append(a)
+
+
+
+    num1 = 0
+    num2 = 0
+    num3 = 1
+    lever = 0
+
+    while num3 <= n**2:
+        if answer[num1][num2] == 0:
+            answer[num1][num2] += num3
+            if lever == 0:
+                if num2 == n - 1:
+                    num3 += 1
+                    num1 += 1
+                    lever = 1
+                else:
+                    num2 += 1
+                    num3 += 1
+            elif lever == 1:
+                if num1 == n - 1:
+                    num3 += 1
+                    num2 -= 1
+                    lever = 2
+                else:
+                    num1 += 1
+                    num3 += 1
+            elif lever == 2:
+                if num2 == 0:
+                    num3 += 1
+                    num1 -= 1
+                    lever = 3
+                else:
+                    num2 -= 1
+                    num3 += 1
+            elif lever == 3:
+                if answer[num1-1][num2] == 0:
+                    num1 -= 1
+                    num3 += 1
+                else:
+                    num3 += 1
+                    num2 += 1
+                    lever = 0
+
+        else: #방향 꺾는거.
+            if lever == 0:
+                lever = 1
+                num1 += 1
+                num2 -= 1
+            elif lever == 1:
+                lever = 2
+                num2 -= 1
+                num1 -= 1
+            elif lever == 2:
+                lever = 3
+                num2 += 1
+                num1 -= 1
+            elif lever == 3:
+                lever = 1
+                num1 -= 1
+                num2 += 1
+
+    return answer
