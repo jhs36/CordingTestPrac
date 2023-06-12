@@ -1,0 +1,11 @@
+def solution(order):
+    answer = 0
+    
+    for x in order:
+        if x.find('americano') != -1:
+            answer += 4500
+        elif x.find('cafelatte') != -1:
+            answer += 5000
+        elif x.find('anything') != -1:
+            answer += 4500
+    return answer
