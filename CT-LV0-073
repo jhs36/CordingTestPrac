@@ -1,0 +1,11 @@
+def solution(n):
+    answer = []
+    for x in range(n):
+        a = []
+        for y,z in enumerate(range(n)):
+            if y == x:
+                a.append(1)
+            else:
+                a.append(0)
+        answer.append(a)
+    return answer
