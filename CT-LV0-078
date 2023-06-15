@@ -1,0 +1,50 @@
+import itertools
+
+def solution(babbling):
+    answer = 0
+
+    count1 = []
+    for i1 in range(len(babbling)):
+        count1.append(0)
+
+    for x1, y1 in enumerate(babbling):
+        for z1 in ["aya", "ye", "woo", "ma"]:
+            if y1.find(z1) != -1:
+                count1[x1] += 1
+
+    able1 = ["aya", "ye", "woo", "ma"]
+    able2 = []
+    able3 = []
+
+    for i in range(1,len(able1)+1):
+        temp = itertools.permutations(able1,i)
+        able2.extend(temp)
+
+    for i1 in able2:
+        k = ''
+        for i2 in i1:
+            k += i2
+        able3.append(k)
+
+    count2 = []
+    for i in range(len(babbling)):
+        count2.append(0)
+
+    for x2, y2 in enumerate(babbling):
+        a = y2.replace('aya', '')
+        if a != y2:
+            count2[x2] += 1
+        b = a.replace('ye', '')
+        if b != a:
+            count2[x2] += 1
+        c = b.replace('woo', '')
+        if c != b:
+            count2[x2] += 1
+        d = c.replace('ma', '')
+        if d != c:
+            count2[x2] += 1
+
+        if count1[x2] == count2[x2] and d == '' and able3.count(y2) == 1:
+            answer += 1
+
+    return answer
