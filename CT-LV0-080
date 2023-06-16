@@ -1,0 +1,13 @@
+def solution(num, total):
+    answer = []
+    if num % 2 != 0:
+        for i1 in range((total//num)-(num//2), (total//num)+(num//2)+1):
+            answer.append(i1)
+    else:
+        for i in range(total//num-(num//2-1),1000):
+            if sum(answer) == total:
+                break
+            else:
+                answer.append(i)
+
+    return answer
