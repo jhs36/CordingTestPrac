@@ -1,0 +1,13 @@
+def solution(my_string, num1, num2):
+    answer = ''
+    a = []
+    for i in my_string:
+        a.append(i)
+    
+    a.insert(num2, a[num1])
+    a.insert(num1, a[num2+1])
+    a.pop(num1+1)
+    a.pop(num2+1)
+    
+    answer = ''.join(a)
+    return answer
