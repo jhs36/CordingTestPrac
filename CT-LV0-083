@@ -1,0 +1,12 @@
+def solution(my_str, n):
+    answer = []
+    a = ''
+    for i in my_str:
+        if len(a) == n:
+            answer.append(a)
+            a = ''
+            a += i
+        else:
+            a += i
+    answer.append(a)
+    return answer
