@@ -1,0 +1,21 @@
+def solution(array, n):
+    a = []
+    b = []
+
+    for x in array:
+        a.append(abs(x - n))
+        b.append(x - n)
+
+    c = min(a)
+
+    if a.count(c) > 1:
+        if b.count(-c) > 0:
+            d = b.index(-c)
+            return array[d]
+        else:
+            f = b.index(c)
+            return array[f]
+
+    else:
+        e = a.index(c)
+        return array[e]
