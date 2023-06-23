@@ -1,0 +1,6 @@
+def solution(cipher, code):
+    answer = ''
+    for x,y in enumerate(cipher):
+        if (x+1) % code == 0:
+            answer += y
+    return answer
