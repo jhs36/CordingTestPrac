@@ -1,0 +1,11 @@
+def solution(chicken):
+    answer = chicken//10
+    coupon = chicken%10
+    a = list(range(chicken//10))
+    for x in a:
+        coupon += 1
+        if coupon == 10:
+            coupon = 0
+            answer += 1
+            a.append(1)
+    return answer
