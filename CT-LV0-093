@@ -1,0 +1,37 @@
+def solution(numbers):
+    a = []
+    b = ''
+    for x in numbers:
+        a.append(x)
+        if ''.join(a) == "zero":
+            b += '0'
+            a.clear()
+        elif ''.join(a) == "one":
+            b += '1'
+            a.clear()
+        elif ''.join(a) == "two":
+            b += '2'
+            a.clear()
+        elif ''.join(a) == "three":
+            b += '3'
+            a.clear()
+        elif ''.join(a) == "four":
+            b += '4'
+            a.clear()
+        elif ''.join(a) == "five":
+            b += '5'
+            a.clear()
+        elif ''.join(a) == 'six':
+            b += '6'
+            a.clear()
+        elif ''.join(a) == 'seven':
+            b += '7'
+            a.clear()
+        elif ''.join(a) == 'eight':
+            b += '8'
+            a.clear()
+        elif ''.join(a) == 'nine':
+            b += '9'
+            a.clear()
+        
+    return int(b)
