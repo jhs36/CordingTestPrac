@@ -1,0 +1,18 @@
+def solution(my_string):
+    answer = 0
+    a = my_string.split(' ')
+    count = 1
+    
+    if a[count] == '+':
+        answer += int(a[count-1])+int(a[count+1])
+    elif a[count] == '-':
+        answer += int(a[count-1])-int(a[count+1])
+    
+    while count < len(a)-2:
+        count += 2
+        if a[count] == '+':
+            answer += int(a[count+1])
+        elif a[count] == '-':
+            answer -= int(a[count+1])
+        
+    return answer
