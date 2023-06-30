@@ -1,0 +1,22 @@
+def solution(numlist, n):
+    answer = []
+    a = []
+
+    for i in numlist:
+        a.append(abs(i - n))
+
+    b = sorted(a)
+
+    for i in b:
+        if b.count(i) > 1:
+            if i+n not in answer:
+                answer.append(i+n)
+            else:
+                answer.append(i+n-(2*i))
+        else:
+            if numlist.count(i+n) == 0:
+                answer.append(abs(i-n))
+            else:
+                answer.append(i+n)
+
+    return answer
