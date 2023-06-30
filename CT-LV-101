@@ -1,0 +1,13 @@
+def solution(score):
+    answer = []
+    average = []
+    for i in score:
+        average.append(sum(i) / 2)
+
+    rank = sorted(average, reverse=True)
+
+    for i in average:
+        a = rank.index(i)
+        answer.append(a+1)
+
+    return answer
