@@ -1,0 +1,12 @@
+def solution(lines):
+    list0 = []
+    for list in lines:
+        for i in range(list[0],list[1]):
+            list0.append(i+0.5)
+
+    list1 = []
+    for i in list0:
+        if list0.count(i) > 1 and i not in list1:
+            list1.append(i)
+
+    return len(list1)
