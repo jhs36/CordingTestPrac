@@ -1,0 +1,19 @@
+def solution(n):
+    answer = 0
+    for i in range(1, n+1):
+        answer += 1
+        
+        if answer%3 == 0 or (answer%10) == 3:
+            answer += 1
+            if answer % 3 == 0 or (answer % 10) == 3:
+                answer += 1
+            elif answer // 10 == 3:
+                answer = 40
+            elif answer%100 == 30:
+                answer = 140
+        elif answer//10 == 3:
+            answer = 40
+        elif answer%100 == 30:
+            answer = 140
+                
+    return answer
