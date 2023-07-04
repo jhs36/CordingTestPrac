@@ -1,0 +1,12 @@
+def solution(sides):
+    answer = 0
+    ex = []
+    for i in range(1,sum(sides)+1):
+        ex += sides
+        ex.append(i)
+        m = max(ex)
+        ex.remove(m)
+        if m < sum(ex):
+            answer += 1
+        ex.clear()
+    return answer
