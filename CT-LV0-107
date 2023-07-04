@@ -1,0 +1,11 @@
+def solution(spell, dic):
+    answer = 0
+    for i in dic:
+        a = []
+        for n in i:
+            a.append(n)
+        if sorted(spell) == sorted(a):
+            return 1
+    
+    if answer == 0:
+        return 2
