@@ -1,0 +1,9 @@
+def solution(s):
+    answer = 0
+    lista = s.split(' ')
+    for x,y in enumerate(lista):
+        if y == 'Z':
+            answer -= int(lista[x-1])
+        else:
+            answer += int(y)
+    return answer
