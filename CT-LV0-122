@@ -1,0 +1,12 @@
+def solution(num_list, n):
+    answer = []
+    lista = []
+    count = 0
+    for i in num_list:
+        lista.append(i)
+        count += 1
+        if count == n:
+            answer.append(lista)
+            count = 0
+            lista = []
+    return answer
