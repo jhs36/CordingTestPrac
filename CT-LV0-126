@@ -1,0 +1,26 @@
+def solution(numer1, denom1, numer2, denom2):
+    denom_lcm = 0
+    for i in range(denom1 + denom2 - 1, (denom1 * denom2) + 1):
+        if i % denom1 == 0 and i % denom2 == 0:
+            denom_lcm = i
+            break
+    sum_numer = numer1 * (denom_lcm // denom1) + numer2 * (denom_lcm // denom2)
+
+    n_numer = []
+    n_denom = []
+    cn = []
+    for i in range(1, sum_numer+1):
+        if sum_numer % i == 0:
+            n_numer.append(i)
+
+    for i in range(1, denom_lcm+1):
+        if denom_lcm % i == 0:
+            n_denom.append(i)
+
+    for i in n_numer:
+        if i in n_denom:
+            cn.append(i)
+
+    gcd = max(cn)
+
+    return [sum_numer // gcd, denom_lcm // gcd]
