@@ -1,0 +1,16 @@
+def solution(array):
+    listarray = []
+    arraycount = []
+    for i in array:
+        if i not in listarray:
+            listarray.append(i)
+    
+    for i in listarray:
+        arraycount.append(array.count(i))
+        
+    a = max(arraycount)
+    
+    if arraycount.count(a) > 1:
+        return -1
+    else:
+        return listarray[arraycount.index(a)]
