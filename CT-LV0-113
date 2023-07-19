@@ -1,0 +1,21 @@
+def solution(keyinput, board):
+    result = [0,0]
+    for i in keyinput:
+        if result[0] == (board[0]-1)/2 and i == 'right':
+            pass
+        elif result[0] == -(board[0]-1)/2 and i == 'left':
+            pass
+        elif result[1] == (board[1]-1)/2 and i == 'up':
+            pass
+        elif result[1] == -(board[1]-1)/2 and i == 'down':
+            pass
+        elif i == 'right':
+            result[0] += 1
+        elif i == 'left':
+            result[0] -= 1
+        elif i == 'up':
+            result[1] += 1
+        elif i == 'down':
+            result[1] -= 1
+            
+    return result
