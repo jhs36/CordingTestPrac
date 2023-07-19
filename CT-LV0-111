@@ -1,0 +1,31 @@
+def solution(polynomial):
+    a = polynomial.split(' ')
+    pluscount = a.count('+')
+    for i in range(pluscount):
+        a.remove('+')
+    x = 0
+    number = 0
+
+    for i in a:
+        if i == 'x':
+            x += 1
+        elif i != 'x' and i.find('x') != -1:
+            num = int(i.replace('x',''))
+            x += num
+        else:
+            number += int(i)
+
+    if number == 0:
+        if x == 1:
+            return "x"
+        elif x == 0:
+            return ""
+        else:
+            return str(f'{x}x')
+    else:
+        if x == 1:
+            return str(f'x + {number}')
+        elif x == 0:
+            return str(number)
+        else:
+            return str(f'{x}x + {number}')
