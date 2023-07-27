@@ -1,0 +1,7 @@
+def solution(arr):
+    answer = []
+    answer.append(arr[0])
+    for x, y in enumerate(arr):
+        if x > 0 and arr[x-1] != y:
+            answer.append(y)
+    return answer
