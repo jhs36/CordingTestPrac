@@ -1,0 +1,44 @@
+def solution(park, routes):
+    W = len(park[0]) - 1
+    H = len(park) - 1
+
+    for x, y in enumerate(park):
+        if y.find('S') != -1:
+            start = [x, y.find('S')]
+            break
+
+    for i in routes:
+        if i.split(' ')[0] == 'E':
+            if start[1] + int(i.split(' ')[1]) <= W:
+                for n in range(0, int(i.split(' ')[1]) + 1):
+                    if park[start[0]][start[1] + n] == 'X':
+                        start[1] -= int(i.split(' ')[1])
+                        break
+                start[1] += int(i.split(' ')[1])
+
+        elif i.split(' ')[0] == 'W':
+            if start[1] - int(i.split(' ')[1]) >= 0:
+                for n in range(0, int(i.split(' ')[1]) + 1):
+                    if park[start[0]][start[1] - n] == 'X':
+                        start[1] += int(i.split(' ')[1])
+                        break
+                start[1] -= int(i.split(' ')[1])
+
+
+        elif i.split(' ')[0] == 'S':
+            if start[0] + int(i.split(' ')[1]) <= H:
+                for n in range(0, int(i.split(' ')[1]) + 1):
+                    if park[start[0] + n][start[1]] == 'X':
+                        start[0] -= int(i.split(' ')[1])
+                        break
+                start[0] += int(i.split(' ')[1])
+
+        elif i.split(' ')[0] == 'N':
+            if start[0] - int(i.split(' ')[1]) >= 0:
+                for n in range(0, int(i.split(' ')[1]) + 1):
+                    if park[start[0] - n][start[1]] == 'X':
+                        start[0] += int(i.split(' ')[1])
+                        break
+                start[0] -= int(i.split(' ')[1])
+
+    return start
