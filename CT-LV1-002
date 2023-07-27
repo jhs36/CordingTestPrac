@@ -1,0 +1,11 @@
+def solution(name, yearning, photo):
+    answer = []
+    name_yearning_dict = dict(zip(name, yearning))
+    
+    for p in photo:
+        y = 0
+        for i in p:
+            if i in name:
+                y += name_yearning_dict[i]
+        answer.append(y)
+    return answer
