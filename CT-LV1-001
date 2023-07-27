@@ -1,0 +1,14 @@
+def solution(players, callings):
+    p_idx_dict = {players: i for i, players in enumerate(players)}
+
+    for call in callings:
+        called_idx = p_idx_dict[call]
+        front_name = players[called_idx - 1]
+
+        p_idx_dict[call] = called_idx - 1
+        p_idx_dict[front_name] = called_idx
+
+        players[called_idx] = front_name
+        players[called_idx - 1] = call
+
+    return players
