@@ -1,0 +1,15 @@
+def solution(wallpaper):
+    x_coordinate = []
+    y_coordinate = []
+    for a1, b1 in enumerate(wallpaper):
+        for a2, b2 in enumerate(b1):
+            if b2 == '#':
+                x_coordinate.append(a2)
+                y_coordinate.append(a1)
+    
+    lux = min(y_coordinate)
+    luy = min(x_coordinate)
+    rdx = max(y_coordinate)
+    rdy = max(x_coordinate)
+    
+    return [lux, luy, rdx + 1, rdy + 1]
